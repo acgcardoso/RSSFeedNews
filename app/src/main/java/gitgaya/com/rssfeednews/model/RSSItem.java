@@ -1,5 +1,5 @@
 package gitgaya.com.rssfeednews.model;
-
+import gitgaya.com.rssfeednews.model.RSSParser;
 
 public class RSSItem {
 
