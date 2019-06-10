@@ -9,11 +9,6 @@ import android.widget.Button;
 import java.util.ArrayList;
 
 import gitgaya.com.rssfeednews.R;
-import android.databinding.BaseObservable;
-import android.databinding.Bindable;
-import android.text.TextUtils;
-import android.util.Patterns;
-import gitgaya.com.rssfeednews.viewmodel.BrowserActivity;
 import gitgaya.com.rssfeednews.viewmodel.RSSFeedActivity;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -25,19 +20,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnRediff = findViewById(R.id.btnRediff);
+        Button btnJn = findViewById(R.id.btnJn);
         Button btnCinemaBlend = findViewById(R.id.btnCinemaBlend);
-        btnRediff.setOnClickListener(this);
+        btnJn.setOnClickListener(this);
         btnCinemaBlend.setOnClickListener(this);
 
+        rssLinks.add("http://feeds.jn.pt/JN-Desporto");
         rssLinks.add("http://www.rediff.com/rss/moviesreviewsrss.xml");
-        rssLinks.add("http://www.cinemablend.com/rss_review.php");
+        //rssLinks.add("http://www.cinemablend.com/rss_review.php");
+
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btnRediff:
+            case R.id.btnJn:
                 startActivity(new Intent(MainActivity.this, RSSFeedActivity.class).putExtra("rssLink", rssLinks.get(0)));
                 break;
 

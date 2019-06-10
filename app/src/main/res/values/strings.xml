@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RSSFeedNews</string>
+    <string name="JnFeed">Ultimas Globais</string>
+    <string name="Desporto">Ultimas Desporto</string>
 </resources>
