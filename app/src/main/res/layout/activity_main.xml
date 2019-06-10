@@ -6,13 +6,13 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/btnJn"
+        android:id="@+id/btnRecent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/JnFeed" />
+        android:text="@string/RecentFeed" />
 
     <Button
-        android:id="@+id/btnCinemaBlend"
+        android:id="@+id/btnSports"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Desporto" />

@@ -20,27 +20,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnJn = findViewById(R.id.btnJn);
-        Button btnCinemaBlend = findViewById(R.id.btnCinemaBlend);
-        btnJn.setOnClickListener(this);
-        btnCinemaBlend.setOnClickListener(this);
+        Button btnRecent = findViewById(R.id.btnRecent);
+        Button btnSports = findViewById(R.id.btnSports);
+        btnRecent.setOnClickListener(this);
+        btnSports.setOnClickListener(this);
 
         rssLinks.add("http://feeds.tsf.pt/TSF-Ultimas");
         rssLinks.add("http://feeds.jn.pt/JN-Desporto");
-        //rssLinks.add("http://www.cinemablend.com/rss_review.php");
 
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btnJn:
+            case R.id.btnRecent:
                 startActivity(new Intent(MainActivity.this, RSSFeedActivity.class).putExtra("rssLink", rssLinks.get(0)));
                 break;
 
-            case R.id.btnCinemaBlend:
+            case R.id.btnSports:
                 startActivity(new Intent(MainActivity.this, RSSFeedActivity.class).putExtra("rssLink", rssLinks.get(1)));
                 break;
+
         }
     }
 }
