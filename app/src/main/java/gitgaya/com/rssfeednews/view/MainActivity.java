@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnJn.setOnClickListener(this);
         btnCinemaBlend.setOnClickListener(this);
 
+        rssLinks.add("http://feeds.tsf.pt/TSF-Ultimas");
         rssLinks.add("http://feeds.jn.pt/JN-Desporto");
-        rssLinks.add("http://www.rediff.com/rss/moviesreviewsrss.xml");
         //rssLinks.add("http://www.cinemablend.com/rss_review.php");
 
     }
