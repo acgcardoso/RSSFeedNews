@@ -24,9 +24,6 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import gitgaya.com.rssfeednews.model.RSSItem;
-import gitgaya.com.rssfeednews.model.RSSParser;
-
 public class RSSParser {
 
     // RSS XML document CHANNEL tag
