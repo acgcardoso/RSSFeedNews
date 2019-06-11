@@ -1,6 +1,6 @@
 package gitgaya.com.rssfeednews.model;
 import gitgaya.com.rssfeednews.model.RSSParser;
-
+//Variaveis da aplicação, estas são correspondentes às linhas do xml que vão ser lidas.
 public class RSSItem {
 
     public String title;

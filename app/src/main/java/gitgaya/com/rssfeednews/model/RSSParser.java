@@ -1,6 +1,6 @@
 package gitgaya.com.rssfeednews.model;
 
-//Leitura de xml para memória
+//Leitura e conversão do xml.
 import android.util.Log;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;

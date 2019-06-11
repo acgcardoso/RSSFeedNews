@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">RSSFeedNews</string>
-    <string name="RecentFeed">Ultimas Globais</string>
-    <string name="Desporto">Ultimas Desporto</string>
+    <string name="app_name" translatable="true">RSSFeedNews</string>
+    <string name="RecentFeed" translatable="true">Ultimas Globais</string>
+    <string name="Desporto" translatable="true">Ultimas Desporto</string>
 </resources>

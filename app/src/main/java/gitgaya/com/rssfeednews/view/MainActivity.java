@@ -1,4 +1,5 @@
 package gitgaya.com.rssfeednews.view;
+//Classe principal carrega o array do xml e lança no ecrã.
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +11,9 @@ import java.util.ArrayList;
 
 import gitgaya.com.rssfeednews.R;
 import gitgaya.com.rssfeednews.viewmodel.RSSFeedActivity;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
 
 
     ArrayList<String> rssLinks = new ArrayList<>();

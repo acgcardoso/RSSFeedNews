@@ -1,5 +1,7 @@
 package gitgaya.com.rssfeednews.viewmodel;
 
+//Lê e converte o url.
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;

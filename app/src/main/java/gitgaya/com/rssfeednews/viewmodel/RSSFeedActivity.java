@@ -1,5 +1,7 @@
 package gitgaya.com.rssfeednews.viewmodel;
 
+//
+
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -25,8 +27,6 @@ import java.util.Locale;
 import gitgaya.com.rssfeednews.R;
 import gitgaya.com.rssfeednews.model.RSSItem;
 import gitgaya.com.rssfeednews.model.RSSParser;
-import gitgaya.com.rssfeednews.R.layout;
-
 
 public class RSSFeedActivity extends ListActivity {
 
