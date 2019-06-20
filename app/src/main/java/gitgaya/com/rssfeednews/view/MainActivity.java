@@ -1,50 +1,67 @@
 package gitgaya.com.rssfeednews.view;
-//Classe principal carrega o array do xml e lança no ecrã.
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-
-import java.util.ArrayList;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import gitgaya.com.rssfeednews.R;
-import gitgaya.com.rssfeednews.viewmodel.RSSFeedActivity;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
-
-
-    ArrayList<String> rssLinks = new ArrayList<>();
+    private DrawerLayout dl;
+    private ActionBarDrawerToggle abdt;
+   // private NavigationView nv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        dl = (DrawerLayout) findViewById(R.id.d1);
+        abdt = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
+        abdt.setDrawerIndicatorEnabled(true);
 
-        Button btnRecent = findViewById(R.id.btnRecent);
-        Button btnSports = findViewById(R.id.btnSports);
-        btnRecent.setOnClickListener(this);
-        btnSports.setOnClickListener(this);
+        dl.addDrawerListener(abdt);
+        abdt.syncState();
 
-        rssLinks.add("http://feeds.tsf.pt/TSF-Ultimas");
-        rssLinks.add("http://feeds.jn.pt/JN-Desporto");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        NavigationView nav_view = (NavigationView)findViewById(R.id.nav_view);
+        nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener()
+        {
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+
+                if (id == R.id.account) {
+                    Toast.makeText(MainActivity.this, "My Account", Toast.LENGTH_SHORT).show();
+                }
+                else if (id == R.id.settings) {
+                    Toast.makeText(MainActivity.this, "Settings", Toast.LENGTH_SHORT).show();
+                }
+                    else if (id == R.id.mycart) {
+                    Toast.makeText(MainActivity.this, "My Cart", Toast.LENGTH_SHORT).show();
+                }
+
+                return true;
+
+            }
+
+        });
     }
 
     @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.btnRecent:
-                startActivity(new Intent(MainActivity.this, RSSFeedActivity.class).putExtra("rssLink", rssLinks.get(0)));
-                break;
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return abdt.onOptionsItemSelected(item)|| super.onOptionsItemSelected(item);
 
-            case R.id.btnSports:
-                startActivity(new Intent(MainActivity.this, RSSFeedActivity.class).putExtra("rssLink", rssLinks.get(1)));
-                break;
+      /*if(abdt.onOptionsItemSelected(item))
+            return true;
 
-        }
+        return super.onOptionsItemSelected(item);*/
     }
 }
-
