@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/account"
+    <item android:id="@+id/btnRecent"
         android:icon="@mipmap/ic_launcher"
-        android:title="My Account"/>
+        android:title="@string/ultimas_noticias"/>
+
+    <item android:id="@+id/btnSports"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/desporto"/>
 
     <item android:id="@+id/settings"
         android:icon="@mipmap/ic_launcher"
-        android:title="Settings"/>
-
-    <item android:id="@+id/mycart"
-        android:icon="@mipmap/ic_launcher"
-        android:title="My Cart"/>
+        android:title="@string/settings"/>
 
 </menu>

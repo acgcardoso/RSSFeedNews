@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="true">RSSFeedNews</string>
-    <string name="RecentFeed" translatable="true">Ultimas Globais</string>
+    <string name="RecentFeed" translatable="true">Ultimas Noticias</string>
     <string name="Desporto" translatable="true">Ultimas Desporto</string>
     <string name="Open">RSSFeedNews</string>
     <string name="Close">RSSFeedNews</string>
+    <string name="ultimas_noticias">Ultimas Noticias</string>
+    <string name="desporto">Desporto</string>
+    <string name="settings">Settings</string>
 </resources>
