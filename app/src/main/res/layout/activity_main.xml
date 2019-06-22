@@ -10,12 +10,16 @@
     android:orientation="vertical">
 
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="gitgaya.com.rssfeednews.MainActivity">
+
+    <ImageView
+        android:id="@+id/simpleImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/start_image"
+        android:src="@mipmap/ic_launcher_round" />
     </RelativeLayout>
 
 <android.support.design.widget.NavigationView

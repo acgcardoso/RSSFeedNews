@@ -51,12 +51,16 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this, RSSFeedActivity.class).putExtra("rssLink", rssLinks.get(0)));
                     Toast.makeText(MainActivity.this, "Ultimas Noticias", Toast.LENGTH_SHORT).show();
                 }
-                else if (id == R.id.settings) {
-                    Toast.makeText(MainActivity.this, "Settings", Toast.LENGTH_SHORT).show();
-                }
-                    else if (id == R.id.btnSports) {
+                else if (id == R.id.btnSports) {
+                    startActivity(new Intent(MainActivity.this, RSSFeedActivity.class).putExtra("rssLink", rssLinks.get(1)));
                     Toast.makeText(MainActivity.this, "Desporto", Toast.LENGTH_SHORT).show();
                 }
+
+                else if (id == R.id.settings) {
+
+                    Toast.makeText(MainActivity.this, "Definições", Toast.LENGTH_SHORT).show();
+                }
+
 
                 dl.closeDrawer(GravityCompat.START);
 
