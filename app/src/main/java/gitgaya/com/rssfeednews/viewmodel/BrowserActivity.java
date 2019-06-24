@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
@@ -14,6 +13,8 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import gitgaya.com.rssfeednews.R;
 
@@ -45,7 +46,7 @@ public class BrowserActivity extends AppCompatActivity {
     private void initWebView() {
         webView.setWebChromeClient(new MyWebChromeClient(this));
         webView.clearCache(true);
-        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setJavaScriptEnabled(false);
         webView.setHorizontalScrollBarEnabled(false);
 
         webView.setWebViewClient(new WebViewClient() {

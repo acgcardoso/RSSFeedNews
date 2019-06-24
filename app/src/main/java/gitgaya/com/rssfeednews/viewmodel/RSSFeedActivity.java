@@ -6,7 +6,6 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
@@ -15,6 +14,8 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+
+import androidx.appcompat.widget.Toolbar;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -96,7 +97,7 @@ public class RSSFeedActivity extends ListActivity {
             // looping through each item
             for (RSSItem item : rssItems) {
                 // creating new HashMap
-                if (item.link.toString().equals(""))
+                if (item.link.equals(""))
                     break;
                 HashMap<String, String> map = new HashMap<String, String>();
 

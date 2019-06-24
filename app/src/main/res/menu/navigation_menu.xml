@@ -3,11 +3,15 @@
 
     <item android:id="@+id/btnRecent"
         android:icon="@mipmap/ic_launcher"
-        android:title="@string/ultimas_noticias"/>
+        android:title="@string/ultimas_noticias" />
 
     <item android:id="@+id/btnSports"
         android:icon="@mipmap/ic_launcher"
         android:title="@string/desporto"/>
+
+    <item android:id="@+id/adicionar"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/adicionar"/>
 
     <item android:id="@+id/settings"
         android:icon="@mipmap/ic_launcher"
