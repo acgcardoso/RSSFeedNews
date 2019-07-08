@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -17,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 import gitgaya.com.rssfeednews.R;
+import gitgaya.com.rssfeednews.model.Textreadwrite;
 import gitgaya.com.rssfeednews.viewmodel.RSSFeedActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,42 +41,51 @@ public class MainActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         NavigationView nav_view = findViewById(R.id.nav_view);
-        nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener()
-        {
+        nav_view.setNavigationItemSelectedListener(item -> {
+            int id = item.getItemId();
+            rssLinks.add("http://feeds.tsf.pt/TSF-Ultimas");
+            rssLinks.add("http://feeds.jn.pt/JN-Desporto");
+            rssLinks.add("http://www.xl.pt/meteorologia/syndication/?pais=1");
+            rssLinks.add("https://www.noticiasaominuto.com/rss/fama");
 
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id = item.getItemId();
-                rssLinks.add("http://feeds.tsf.pt/TSF-Ultimas");
-                rssLinks.add("http://feeds.jn.pt/JN-Desporto");
-
-                if (id == R.id.btnRecent) {
-                    startActivity(new Intent(MainActivity.this, RSSFeedActivity.class).putExtra("rssLink", rssLinks.get(0)));
-                    Toast.makeText(MainActivity.this, "Ultimas Noticias", Toast.LENGTH_SHORT).show();
-                }
-                else if (id == R.id.btnSports) {
-                    startActivity(new Intent(MainActivity.this, RSSFeedActivity.class).putExtra("rssLink", rssLinks.get(1)));
-                    Toast.makeText(MainActivity.this, "Desporto", Toast.LENGTH_SHORT).show();
-                }
-
-                else if (id == R.id.settings) {
-
-                    Toast.makeText(MainActivity.this, "Definições", Toast.LENGTH_SHORT).show();
-                }
-
-
-                dl.closeDrawer(GravityCompat.START);
-
-                return true;
+            if (id == R.id.btnRecent) {
+                startActivity(new Intent(MainActivity.this, RSSFeedActivity.class).putExtra("rssLink", rssLinks.get(0)));
+                Toast.makeText(MainActivity.this, "Ultimas Noticias", Toast.LENGTH_SHORT).show();
+            }
+            else if (id == R.id.btnSports) {
+                startActivity(new Intent(MainActivity.this, RSSFeedActivity.class).putExtra("rssLink", rssLinks.get(1)));
+                Toast.makeText(MainActivity.this, "Desporto", Toast.LENGTH_SHORT).show();
+            }
+            else if (id == R.id.btnMeteo) {
+                startActivity(new Intent(MainActivity.this, RSSFeedActivity.class).putExtra("rssLink", rssLinks.get(2)));
+                Toast.makeText(MainActivity.this, "Meteorologia", Toast.LENGTH_SHORT).show();
             }
 
+            else if (id == R.id.favoritos) {
+                startActivity(new Intent(MainActivity.this, RSSFeedActivity.class).putExtra("rssLink", rssLinks.get(3)));
+                Toast.makeText(MainActivity.this, "Favoritos", Toast.LENGTH_SHORT).show();
+            }
+
+
+            else if (id == R.id.settings) {
+                startActivity(new Intent(MainActivity.this, Textreadwrite.class));
+                Toast.makeText(MainActivity.this, "Definições", Toast.LENGTH_SHORT).show();
+            }
+
+
+            dl.closeDrawer(GravityCompat.START);
+
+            return true;
         });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    @Override  public boolean onOptionsItemSelected(MenuItem item) {
+        // return abdt.onOptionsItemSelected(item)|| super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+        if (id == R.id.btnRecent) {
+            startActivity(new Intent(MainActivity.this, RSSFeedActivity.class).putExtra("rssLink", rssLinks.get(0)));
+            Toast.makeText(MainActivity.this, "Ultimas Noticias", Toast.LENGTH_SHORT).show();
+        }
         return abdt.onOptionsItemSelected(item)|| super.onOptionsItemSelected(item);
-
     }
-
 }

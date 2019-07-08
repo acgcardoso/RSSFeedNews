@@ -23,31 +23,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="Projeto de Computação Móvel RSS FEED NEWS"
+            android:text="@string/projeto_de_computa_o_m_vel_rss_feed_news"
             android:textAlignment="center"
             android:textColor="#FAF6F6"
             android:textSize="20sp"/>
+
+        <ImageView
+            android:id="@+id/simpleImageView"
+            android:layout_width="match_parent"
+            android:layout_height="430dp"
+            android:contentDescription="@string/start_image"
+            android:src="@mipmap/logo" />
 
         <TextView
             android:id="@+id/simpleText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="Disciplina de CMO - ISPGAYA 2019"
+            android:text="@string/disciplina_de_cmo_ispgaya_2019"
             android:textAlignment="center"
             android:textColor="#fff"
-            android:textSize="20sp"
-/>
-
-        <ImageView
-            android:id="@+id/simpleImageView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/start_image"
-            android:src="@mipmap/logo" />
-
+            android:textSize="20sp"/>
 
     </LinearLayout>
+
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"

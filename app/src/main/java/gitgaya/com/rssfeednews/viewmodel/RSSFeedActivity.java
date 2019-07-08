@@ -1,21 +1,19 @@
 package gitgaya.com.rssfeednews.viewmodel;
 
-//
+//  Esta classe usa a classe AsyncTask para carregar os itens do URL do Feed RSS em segundo plano.
 
+import android.annotation.SuppressLint;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-
-import androidx.appcompat.widget.Toolbar;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -29,6 +27,8 @@ import gitgaya.com.rssfeednews.R;
 import gitgaya.com.rssfeednews.model.RSSItem;
 import gitgaya.com.rssfeednews.model.RSSParser;
 
+//import androidx.appcompat.widget.Toolbar;
+
 public class RSSFeedActivity extends ListActivity {
 
 
@@ -36,8 +36,9 @@ public class RSSFeedActivity extends ListActivity {
     ArrayList<HashMap<String, String>> rssItemList = new ArrayList<>();
 
     RSSParser rssParser = new RSSParser();
-    Toolbar toolbar;
+    //Toolbar toolbar;
 
+    //Não são iniciadas as restantes variaveis existentes na class RSSItem
     List<RSSItem> rssItems = new ArrayList<>();
     private static String TAG_TITLE = "title";
     private static String TAG_LINK = "link";
@@ -54,18 +55,15 @@ public class RSSFeedActivity extends ListActivity {
 
         ListView lv = getListView();
 
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                Intent in = new Intent(getApplicationContext(), BrowserActivity.class);
-                String page_url = ((TextView) view.findViewById(R.id.page_url)).getText().toString().trim();
-                in.putExtra("url", page_url);
-                startActivity(in);
-            }
+        lv.setOnItemClickListener((parent, view, position, id) -> {
+            Intent in = new Intent(getApplicationContext(), BrowserActivity.class);
+            String page_url = ((TextView) view.findViewById(R.id.page_url)).getText().toString().trim();
+            in.putExtra("url", page_url);
+            startActivity(in);
         });
     }
 
+    @SuppressLint("StaticFieldLeak")
     public class LoadRSSFeedItems extends AsyncTask<String, String, String> {
 
         @Override
@@ -91,17 +89,17 @@ public class RSSFeedActivity extends ListActivity {
             // rss link url
             String rss_url = args[0];
 
-            // list of rss items
+            // Lista de rss itens
             rssItems = rssParser.getRSSFeedItems(rss_url);
 
-            // looping through each item
+            // Loop entre cada item
             for (RSSItem item : rssItems) {
-                // creating new HashMap
+                // Cria um novo HashMap
                 if (item.link.equals(""))
                     break;
-                HashMap<String, String> map = new HashMap<String, String>();
+                HashMap<String, String> map = new HashMap<>();
 
-                // adding each child node to HashMap key => value
+                // Adiciona um novo nó à chave do HashMap, formata a data de publicação
 
                 String givenDateString = item.pubdate.trim();
                 SimpleDateFormat sdf = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss Z");
@@ -118,24 +116,22 @@ public class RSSFeedActivity extends ListActivity {
 
                 map.put(TAG_TITLE, item.title);
                 map.put(TAG_LINK, item.link);
-                map.put(TAG_PUB_DATE, item.pubdate); // If you want parse the date
+                map.put(TAG_PUB_DATE, item.pubdate); // Analisa (Parsing) e carrega a data.
 
-                // adding HashList to ArrayList
+                // Adiciona a HashList ao  ArrayList
                 rssItemList.add(map);
             }
 
-            // updating UI from Background Thread
-            runOnUiThread(new Runnable() {
-                public void run() {
-                    ListAdapter adapter = new SimpleAdapter(
-                            RSSFeedActivity.this,
-                            rssItemList, R.layout.rss_item_list_row,
-                            new String[]{TAG_LINK, TAG_TITLE, TAG_PUB_DATE},
-                            new int[]{R.id.page_url, R.id.title, R.id.pub_date});
+            // Atualiza o interface do utilizador do thread do background
+            runOnUiThread(() -> {
+                ListAdapter adapter = new SimpleAdapter(
+                        RSSFeedActivity.this,
+                        rssItemList, R.layout.rss_item_list_row,
+                        new String[]{TAG_LINK, TAG_TITLE, TAG_PUB_DATE},
+                        new int[]{R.id.page_url, R.id.title, R.id.pub_date});
 
-                    // updating listview
-                    setListAdapter(adapter);
-                }
+                // Actualiza a listview
+                setListAdapter(adapter);
             });
             return null;
         }

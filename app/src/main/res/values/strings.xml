@@ -7,8 +7,14 @@
     <string name="Close">RSSFeedNews</string>
     <string name="ultimas_noticias">Ultimas Noticias</string>
     <string name="desporto">Desporto</string>
-    <string name="settings">Settings</string>
+    <string name="meteorologia">Meteorologia</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="definicoes">Definições</string>
     <string name="nav_header_image">nav_image</string>
     <string name="start_image">start_image</string>
-    <string name="adicionar">adicionar</string>
+    <string name="menu">Menu</string>
+    <string name="disciplina_de_cmo_ispgaya_2019">Disciplina de CMO - ISPGAYA 2019</string>
+    <string name="projeto_de_computa_o_m_vel_rss_feed_news">Projeto de Computação Móvel RSS FEED NEWS</string>
+    <string name="guardar_favorito">Guardar Favorito</string>
+    <string name="ler_conteudo_txt">Ler conteudo txt</string>
 </resources>

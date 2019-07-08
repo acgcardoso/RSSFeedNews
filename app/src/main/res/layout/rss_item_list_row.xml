@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:padding="8dip">
 
+<!--Estrutura final para o texto a ser carregado-->
     <TextView
         android:id="@+id/page_url"
         android:layout_width="fill_parent"

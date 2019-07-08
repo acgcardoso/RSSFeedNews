@@ -5,11 +5,23 @@
     android:background="@color/colorPrimaryDark"
     android:gravity="center"
     android:orientation="vertical">
+
+    <!--Cabeçalho da barra lateral-->
     <ImageView
         android:layout_width="150dp"
         android:layout_marginBottom="10dp"
         android:layout_height="130dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="25dp"
         android:contentDescription="@string/nav_header_image"
         android:background="@mipmap/logorfn"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cardview_light_background"
+        android:text="@string/menu"
+        android:textAlignment="center"
+        android:textColor="@color/ic_launcher_background"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        />
 </LinearLayout>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
+ <!-- Background da Splash Activity -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <item android:drawable="@android:color/holo_green_light" />
+   <item android:drawable="@android:color/holo_green_light" />
     <item>
         <bitmap android:gravity="center"
             android:src="@drawable/logo"/>

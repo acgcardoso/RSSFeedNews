@@ -2,19 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/btnRecent"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_access_time_black_24dp"
         android:title="@string/ultimas_noticias" />
 
     <item android:id="@+id/btnSports"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_pool_black_24dp"
         android:title="@string/desporto"/>
 
-    <item android:id="@+id/adicionar"
-        android:icon="@mipmap/ic_launcher"
-        android:title="@string/adicionar"/>
+    <item android:id="@+id/btnMeteo"
+        android:icon="@drawable/ic_ac_unit_black_24dp"
+        android:title="@string/meteorologia"/>
+
+    <item android:id="@+id/favoritos"
+        android:icon="@drawable/ic_star_black_24dp"
+        android:title="@string/favoritos"/>
 
     <item android:id="@+id/settings"
-        android:icon="@mipmap/ic_launcher"
-        android:title="@string/settings"/>
+        android:icon="@drawable/ic_rss_feed_black_24dp"
+        android:title="@string/definicoes"/>
 
 </menu>

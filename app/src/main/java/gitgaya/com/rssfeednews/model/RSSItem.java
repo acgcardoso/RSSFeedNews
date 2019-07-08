@@ -1,13 +1,15 @@
 package gitgaya.com.rssfeednews.model;
-import gitgaya.com.rssfeednews.model.RSSParser;
-//Variaveis da aplicação, estas são correspondentes às linhas do xml que vão ser lidas.
+
+//Classe responsável pelas variaveis de obtenção de dados.
+//Variaveis da aplicação, estas são correspondentes aos itens do url a ser carregado.
+
 public class RSSItem {
 
     public String title;
     public String link;
-    public String description;
+    private String description;//Não implementado.
     public String pubdate;
-    public String guid;
+    private String guid;//Não implementado.
 
     public RSSItem(String title, String link, String description, String pubdate, String guid) {
         this.title = title;

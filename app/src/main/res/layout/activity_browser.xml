@@ -4,6 +4,9 @@
     android:id="@+id/relativeLayout"
     android:layout_height="match_parent">
 
+    <!--Cria o Layout do visualizador web.
+        O componente Android WebView é inserido no arquivo de layout XML
+        do layout em que queremos que o WebView seja exibido.-->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -11,9 +14,11 @@
 
         <WebView
             android:id="@+id/webView"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
+            android:layout_alignParentTop="true"
+            />
 
     </androidx.core.widget.NestedScrollView>
 

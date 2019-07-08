@@ -1,6 +1,7 @@
 package gitgaya.com.rssfeednews.viewmodel;
 
-//Lê e converte o url.
+//O componente Android WebView é um navegador completo implementado como uma subclasse View para incorporá-lo na nossa aplicação Android.
+//O componente WebView é inicializado no BrowserActivity usando seu id definido no activity_browser.xml, conforme mostrado no snippet abaixo.
 
 import android.content.Context;
 import android.content.Intent;
@@ -81,7 +82,7 @@ public class BrowserActivity extends AppCompatActivity {
     private class MyWebChromeClient extends WebChromeClient {
         Context context;
 
-        public MyWebChromeClient(Context context) {
+        MyWebChromeClient(Context context) {
             super();
             this.context = context;
         }
